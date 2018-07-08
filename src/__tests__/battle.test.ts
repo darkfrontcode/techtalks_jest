@@ -1,5 +1,6 @@
 import 'jest'
 import axios from 'axios'
+import chalk from 'chalk'
 
 import * as pokeMocks from '../mocks/pokemons'
 import * as powerMocks from '../mocks/powers'
@@ -11,6 +12,9 @@ import { PokemonMapper } from '../pokemon-mapper'
 import { IPokemonMetadata } from '../pokemon-metadata.interface'
 
 jest.mock('axios')
+const log = console.log
+const orange = chalk.hex('#ffa500')
+const green = chalk.hex('#008000')
 
 describe('Battle', () => {
 
@@ -20,6 +24,7 @@ describe('Battle', () => {
     let metadata: Array<IPokemonMetadata>
     let charmander: Pokemon
 	let bulbasaur: Pokemon
+	let looser: Pokemon
 
     test('Request Bulbasaur from API', async () => {
 
@@ -169,6 +174,55 @@ describe('Battle', () => {
 
 		charmander.hit(bulbasaur)
         expect(bulbasaur.hp).toBe(39)
+
+	})
+
+    test('Ultimate fight', async () => {
+
+		axios.get
+			.mockResolvedValueOnce({ data: pokeMocks.Bulbasaur })
+			.mockResolvedValueOnce({ data: pokeMocks.Charmander })
+			.mockResolvedValueOnce({ data: powerMocks.razorWind })
+			.mockResolvedValue({ data: powerMocks.flamethrower })
+
+        response = new Array<IPokemonAPI>(
+            await requestPokemon(1),
+            await requestPokemon(4)
+		)
+
+		metadata = await Promise.all(
+			response.map(async pokemon => {
+				const move = await requestPower(pokemon)
+				return { pokemon, move }
+			})
+		)
+
+		pokemons = metadata.map(meta => new PokemonMapper({ ...meta }).map())
+
+		const [ bulbasaur, charmander ] = pokemons
+
+		log(chalk`{magenta >>> FIGHT OFF <<<}`)
+
+		while(true)
+		{
+			// ! Fight
+			bulbasaur.hit(charmander)
+			charmander.hit(bulbasaur)
+
+			if(charmander.hp === 0 || bulbasaur.hp === 0)
+			{
+				looser = charmander.hp === 0 ? charmander : bulbasaur
+				break
+			}
+
+			log(
+				green(`bulbasaur: ${String(bulbasaur.hp)}`),
+				orange(`charmander: ${String(charmander.hp)}`)
+			)
+		}
+
+		expect(looser.hp).toBe(0)
+		log(chalk`{red ${looser.name} lost the fight =X}`)
 
     })
 

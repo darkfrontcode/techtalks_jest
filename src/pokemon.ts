@@ -26,6 +26,6 @@ export class Pokemon implements IPlayer, IPokemonConfig
 
     public damage(damage: number): void
     {
-        this.hp = this.hp - damage
+        this.hp = Math.max(0, this.hp - damage)
     }
 }
