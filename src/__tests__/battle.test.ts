@@ -201,7 +201,12 @@ describe('Battle', () => {
 
 		const [ bulbasaur, charmander ] = pokemons
 
-		log(chalk`{magenta >>> FIGHT OFF <<<}`)
+		log(
+			chalk`{magenta >>> FIGHT OFF <<<}`,
+			'\n',
+			green(`${bulbasaur.name}: ${String(bulbasaur.hp)}`),
+			orange(`${charmander.name}: ${String(charmander.hp)}`)
+		)
 
 		while(true)
 		{
