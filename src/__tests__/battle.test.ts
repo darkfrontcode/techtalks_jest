@@ -5,18 +5,19 @@ import chalk from 'chalk'
 import * as pokeMocks from '../mocks/pokemons'
 import * as powerMocks from '../mocks/powers'
 
-import { requestPokemon, requestPower } from '../request-pokemon'
+import { requestPokemon } from '../request-pokemon'
+import { requestPower } from '../request-power'
 import { Pokemon } from '../pokemon'
 import { IPokemonAPI } from '../pokemon-api.interface'
-import { PokemonMapper } from '../pokemon-mapper'
 import { IPokemonMetadata } from '../pokemon-metadata.interface'
+import { PokemonMapper } from '../pokemon-mapper'
 
 jest.mock('axios')
 const log = console.log
 const orange = chalk.hex('#ffa500')
 const green = chalk.hex('#008000')
 
-describe('Battle', () => {
+describe('Pokemon Battle', () => {
 
 	let pokemonAPI: IPokemonAPI
 	let pokemons: Array<Pokemon>
@@ -36,18 +37,6 @@ describe('Battle', () => {
 		expect(pokemonAPI.name).toMatch(/bulbasaur/)
 
 	})
-
-    test('Request Charmander from API', async () => {
-
-		axios.get.mockResolvedValue({ data: pokeMocks.Charmander });
-
-		pokemonAPI = await requestPokemon(4)
-
-		expect(pokemonAPI).toEqual(pokeMocks.Charmander)
-		expect(pokemonAPI.name).toMatch(/charmander/)
-
-    })
-
 
 	test('Request multiple pokemons from API', async () => {
 
@@ -101,7 +90,7 @@ describe('Battle', () => {
 
 	})
 
-	test('Pokemon players creation', async () => {
+	test('Pokemon players create', async () => {
 
 		axios.get
 			.mockResolvedValueOnce({ data: pokeMocks.Bulbasaur })
@@ -177,7 +166,7 @@ describe('Battle', () => {
 
 	})
 
-    test('Ultimate fight', async () => {
+    test('Ultimate Fight', async () => {
 
 		axios.get
 			.mockResolvedValueOnce({ data: pokeMocks.Bulbasaur })
@@ -210,7 +199,6 @@ describe('Battle', () => {
 
 		while(true)
 		{
-			// ! Fight
 			bulbasaur.hit(charmander)
 			charmander.hit(bulbasaur)
 
@@ -227,7 +215,7 @@ describe('Battle', () => {
 		}
 
 		expect(looser.hp).toBe(0)
-		log(chalk`{red ${looser.name} lost the fight =X}`)
+		log(chalk`{red ${looser.name} lost the battle =X}`)
 
     })
 
