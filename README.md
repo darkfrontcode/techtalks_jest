@@ -13,15 +13,11 @@
 
 Vamos construir uma batalha pokemon baseada nos dados da [**Pokemon API**](https://pokeapi.co/) e nos cálculos de dano da [**Bulbapedia**](https://bulbapedia.bulbagarden.net/wiki/Damage) e apartir disso vamos usar o [**Jest**](https://jestjs.io/) para validarmos tudo que criarmos.
 
-### Que tal experimentar o Jest?
-É só rodar o [**Playground**](https://jestjs.io/#use);
-
-
 ### Por que usar o Jest?
 
 Jest é usado por equipes de todos os tamanhos para testar aplicativos da Web, serviços node.js, aplicativos móveis e APIs.
 
-<p align="center">
+<p>
 <img src="https://jestjs.io/img/logos/facebook.png" width="75px" height="75px">
 <img src="https://jestjs.io/img/logos/twitter.png" width="75px" height="75px">
 <img src="https://jestjs.io/img/logos/nyt.png" width="75px" height="75px">
@@ -29,6 +25,12 @@ Jest é usado por equipes de todos os tamanhos para testar aplicativos da Web, s
 <img src="https://jestjs.io/img/logos/airbnb.png" width="75px" height="75px">
 <img src="https://jestjs.io/img/logos/instagram.png" width="75px" height="75px">
 </p>
+
+### Plataforma de testes com zero de configuração
+Jest é usado pelo Facebook para testar códigos JavaScript, incluindo os aplicativos React. Uma das filosofias de Jest é fornecer uma experiência integrada de "configuração zero".
+
+### Que tal experimentar o Jest?
+É só rodar o [**Playground**](https://jestjs.io/#use);
 
 #### Referências
 * https://jestjs.io/
