@@ -7,6 +7,9 @@
 
 #### Delightful JavaScript Testing
 
+<p align="center">
+<img src="https://github.com/darkfrontcode/techtalks_jest/blob/master/midias/jest.gif">
+</p>
 
 #### Referências
 * https://jestjs.io/
