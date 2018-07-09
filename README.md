@@ -29,6 +29,9 @@ Jest é usado por equipes de todos os tamanhos para testar aplicativos da Web, s
 ### Plataforma de testes com zero de configuração
 Jest é usado pelo Facebook para testar códigos JavaScript, incluindo os aplicativos React. Uma das filosofias de Jest é fornecer uma experiência integrada de "configuração zero".
 
+### Rápido e com sandbox
+Jest paralelisa as execuções de teste entre workers para maximizar o desempenho. As mensagens do console são armazenadas em buffer e impressas junto com os resultados do teste. Redefinições automáticas de estado global para cada teste são feitas, para que nenhum teste entre em conflito.
+
 ### Que tal experimentar o Jest?
 É só rodar o [**Playground**](https://jestjs.io/#use);
 
