@@ -21,12 +21,14 @@ Vamos construir uma batalha pokemon baseada nos dados da [**Pokemon API**](https
 
 Jest é usado por equipes de todos os tamanhos para testar aplicativos da Web, serviços node.js, aplicativos móveis e APIs.
 
+<p align="center">
 <img src="https://jestjs.io/img/logos/facebook.png" width="75px" height="75px">
 <img src="https://jestjs.io/img/logos/twitter.png" width="75px" height="75px">
 <img src="https://jestjs.io/img/logos/nyt.png" width="75px" height="75px">
 <img src="https://jestjs.io/img/logos/spotify.png" width="75px" height="75px">
 <img src="https://jestjs.io/img/logos/airbnb.png" width="75px" height="75px">
 <img src="https://jestjs.io/img/logos/instagram.png" width="75px" height="75px">
+</p>
 
 #### Referências
 * https://jestjs.io/
