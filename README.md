@@ -4,3 +4,5 @@
 </p>
 
 # 🃏  Techtalks - Jest 🃏
+
+> Delightful JavaScript Testing
