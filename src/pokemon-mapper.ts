@@ -11,7 +11,7 @@ export class PokemonMapper implements IPokemonMetadata
 
     constructor(metadata: IPokemonMetadata)
     {
-		Object.keys(metadata).forEach(key => this[key] = metadata[key])
+		Object.keys(metadata).map(key => this[key] = metadata[key])
     }
 
     public map(): Pokemon

@@ -12,7 +12,7 @@ export class Pokemon implements IPlayer, IPokemonConfig
 
     constructor(config: IPokemonConfig)
     {
-        Object.keys(config).forEach(key => this[key] = config[key])
+        Object.keys(config).map(key => this[key] = config[key])
     }
 
     public hit(enemy: Pokemon): void

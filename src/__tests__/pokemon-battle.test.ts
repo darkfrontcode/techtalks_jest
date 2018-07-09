@@ -1,6 +1,5 @@
 import 'jest'
 import axios from 'axios'
-import chalk from 'chalk'
 
 import * as pokeMocks from '../mocks/pokemons'
 import * as powerMocks from '../mocks/powers'
@@ -11,11 +10,9 @@ import { Pokemon } from '../pokemon'
 import { IPokemonAPI } from '../pokemon-api.interface'
 import { IPokemonMetadata } from '../pokemon-metadata.interface'
 import { PokemonMapper } from '../pokemon-mapper'
+import { Logger } from '../logger'
 
 jest.mock('axios')
-const log = console.log
-const orange = chalk.hex('#ffa500')
-const green = chalk.hex('#008000')
 
 describe('Pokemon Battle', () => {
 
@@ -189,33 +186,23 @@ describe('Pokemon Battle', () => {
 		pokemons = metadata.map(meta => new PokemonMapper({ ...meta }).map())
 
 		const [ bulbasaur, charmander ] = pokemons
-
-		log(
-			chalk`{magenta >>> FIGHT OFF <<<}`,
-			'\n',
-			green(`${bulbasaur.name}: ${String(bulbasaur.hp)}`),
-			orange(`${charmander.name}: ${String(charmander.hp)}`)
-		)
+		Logger.fightOff(pokemons)
 
 		while(true)
 		{
 			bulbasaur.hit(charmander)
 			charmander.hit(bulbasaur)
+			Logger.status(pokemons)
 
 			if(charmander.hp === 0 || bulbasaur.hp === 0)
 			{
 				looser = charmander.hp === 0 ? charmander : bulbasaur
 				break
 			}
-
-			log(
-				green(`bulbasaur: ${String(bulbasaur.hp)}`),
-				orange(`charmander: ${String(charmander.hp)}`)
-			)
 		}
 
 		expect(looser.hp).toBe(0)
-		log(chalk`{red ${looser.name} lost the battle =X}`)
+		Logger.looser(looser)
 
     })
 
