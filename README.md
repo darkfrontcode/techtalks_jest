@@ -6,3 +6,9 @@
 # 🃏  Techtalks - Jest 🃏
 
 #### Delightful JavaScript Testing
+
+
+#### Referências
+* https://jestjs.io/
+* https://pokeapi.co/
+* https://bulbapedia.bulbagarden.net/wiki/Damage
