@@ -32,6 +32,9 @@ Jest é usado pelo Facebook para testar códigos JavaScript, incluindo os aplica
 ### Rápido e com sandbox
 Jest paralelisa as execuções de teste entre workers para maximizar o desempenho. As mensagens do console são armazenadas em buffer e impressas junto com os resultados do teste. Redefinições automáticas de estado global para cada teste são feitas, para que nenhum teste entre em conflito.
 
+### Relatórios de cobertura de código integrados
+Crie facilmente relatórios de cobertura de código usando --coverage. Nenhuma configuração adicional ou bibliotecas necessárias! Jest pode coletar informações de cobertura de código de projetos inteiros, incluindo arquivos não testados.
+
 ### Que tal experimentar o Jest?
 É só rodar o [**Playground**](https://jestjs.io/#use);
 
