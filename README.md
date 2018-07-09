@@ -13,6 +13,9 @@
 
 Vamos construir uma batalha pokemon baseada nos dados da [**Pokemon API**](https://pokeapi.co/) e nos cálculos de dano da [**Bulbapedia**](https://bulbapedia.bulbagarden.net/wiki/Damage) e apartir disso vamos usar o [**Jest**](https://jestjs.io/) para validarmos tudo que criarmos.
 
+### Que tal experimentar o Jest?
+É só rodar o [**Playground**](https://jestjs.io/#use);
+
 #### Referências
 * https://jestjs.io/
 * https://pokeapi.co/
