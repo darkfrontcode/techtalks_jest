@@ -36,7 +36,7 @@ Jest paralelisa as execuções de teste entre workers para maximizar o desempenh
 Crie facilmente relatórios de cobertura de código usando --coverage. Nenhuma configuração adicional ou bibliotecas necessárias! Jest pode coletar informações de cobertura de código de projetos inteiros, incluindo arquivos não testados.
 
 ### Que tal experimentar o Jest?
-É só rodar o [**Playground**](https://jestjs.io/#use);
+Você pode experimentar uma versão real do Jest usando repl.it É só rodar o [**Playground**](https://jestjs.io/#use);
 
 #### Referências
 * https://jestjs.io/
